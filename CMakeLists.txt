@@ -7,8 +7,8 @@ else()
     set(IS_ROOT_PROJECT OFF)
 endif()
 
-option(LIBSAMPLERATE_TESTS "Enable to generate test targets" ${IS_ROOT_PROJECT})
-option(LIBSAMPLERATE_EXAMPLES "Enable to generate examples" ${IS_ROOT_PROJECT})
+#option(LIBSAMPLERATE_TESTS "Enable to generate test targets" ${IS_ROOT_PROJECT})
+#option(LIBSAMPLERATE_EXAMPLES "Enable to generate examples" ${IS_ROOT_PROJECT})
 option(LIBSAMPLERATE_INSTALL "Enable to add install directives" ${IS_ROOT_PROJECT})
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
@@ -52,12 +52,12 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
   endif()
 endif()
 
-test_big_endian(CPU_IS_BIG_ENDIAN)
-if(CPU_IS_BIG_ENDIAN)
-	set(CPU_IS_LITTLE_ENDIAN 0)
-else()
+#test_big_endian(CPU_IS_BIG_ENDIAN)
+#if(CPU_IS_BIG_ENDIAN)
+#	set(CPU_IS_LITTLE_ENDIAN 0)
+#else()
 	set(CPU_IS_LITTLE_ENDIAN 1)
-endif()
+#endif()
 
 find_library(LIBSAMPLERATE_MATH_LIBRARY m)
 
